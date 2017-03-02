@@ -9,3 +9,19 @@ author			: Putra Sudaryanto [putra@sudaryanto.id]
 db_table_name	: 
  
 db_sql_filename	: 
+
+plugin_menu		:
+	- urlTitle: Datas
+		urlRules: {siteType: 0,1, userLevel: 1,2}
+		urlPath: {url: -, attr: -, icon: -}
+		submenu :
+			- urlTitle: Vacancy Type
+				urlRules: {siteType: 0,1, userLevel: 1}
+				urlPath: {url: o/type/manage, attr: -, icon: -}
+
+content_menu	:
+        
+# controller o/type
+	- urlTitle: Add Type
+		urlRules: {vacancy, o/type, manage, siteType: 0,1, userLevel: 1,2}
+		urlPath: {url: add, attr: -, icon: -}

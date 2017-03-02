@@ -8,7 +8,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 1 March 2017, 18:08 WIB
- * @link http://opensource.ommu.co
+ * @link https://github.com/ommu/Vacancy-Advanced
  * @contect (+62)856-299-4114
  *
  */
@@ -19,35 +19,26 @@
 	);
 ?>
 
-<?php //begin.Messages ?>
-<?php
-if(Yii::app()->user->hasFlash('success'))
-	echo Utility::flashSuccess(Yii::app()->user->getFlash('success'));
-?>
-<?php //end.Messages ?>
-
+<div class="dialog-content">
 <?php $this->widget('application.components.system.FDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		array(
 			'name'=>'type_id',
 			'value'=>$model->type_id,
-			//'value'=>$model->type_id != '' ? $model->type_id : '-',
 		),
 		array(
 			'name'=>'publish',
 			'value'=>$model->publish == '1' ? Chtml::image(Yii::app()->theme->baseUrl.'/images/icons/publish.png') : Chtml::image(Yii::app()->theme->baseUrl.'/images/icons/unpublish.png'),
-			//'value'=>$model->publish,
+			'type'=>'raw',
 		),
 		array(
 			'name'=>'type_name',
-			'value'=>$model->type_name,
-			//'value'=>$model->type_name != '' ? $model->type_name : '-',
+			'value'=>$model->type_name != '' ? $model->type_name : '-',
 		),
 		array(
 			'name'=>'type_desc',
 			'value'=>$model->type_desc != '' ? $model->type_desc : '-',
-			//'value'=>$model->type_desc != '' ? CHtml::link($model->type_desc, Yii::app()->request->baseUrl.'/public/visit/'.$model->type_desc, array('target' => '_blank')) : '-',
 			'type'=>'raw',
 		),
 		array(
@@ -56,8 +47,7 @@ if(Yii::app()->user->hasFlash('success'))
 		),
 		array(
 			'name'=>'creation_id',
-			'value'=>$model->creation_id,
-			//'value'=>$model->creation_id != 0 ? $model->creation_id : '-',
+			'value'=>$model->creation_id != 0 ? $model->creation->displayname : '-',
 		),
 		array(
 			'name'=>'modified_date',
@@ -65,13 +55,10 @@ if(Yii::app()->user->hasFlash('success'))
 		),
 		array(
 			'name'=>'modified_id',
-			'value'=>$model->modified_id,
-			//'value'=>$model->modified_id != 0 ? $model->modified_id : '-',
+			'value'=>$model->modified_id != 0 ? $model->modified->displayname : '-',
 		),
 	),
 )); ?>
-
-<div class="dialog-content">
 </div>
 <div class="dialog-submit">
 	<?php echo CHtml::button(Yii::t('phrase', 'Close'), array('id'=>'closed')); ?>

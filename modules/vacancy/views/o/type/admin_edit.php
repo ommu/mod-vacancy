@@ -9,7 +9,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 1 March 2017, 18:08 WIB
- * @link http://opensource.ommu.co
+ * @link https://github.com/ommu/Vacancy-Advanced
  * @contect (+62)856-299-4114
  *
  */
@@ -21,6 +21,4 @@
 	);
 ?>
 
-<div class="form">
-	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
-</div>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
