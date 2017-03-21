@@ -11,17 +11,20 @@ db_table_name	:
 db_sql_filename	: 
 
 plugin_menu		:
+	- urlTitle: Views
+		urlRules: {siteType: "0,1", userLevel: "1,2"}
+		urlPath: {url: o/admin/manage, attr: -, icon: -}
 	- urlTitle: Datas
-		urlRules: {siteType: 0,1, userLevel: 1,2}
+		urlRules: {siteType: "0,1", userLevel: "1,2"}
 		urlPath: {url: -, attr: -, icon: -}
 		submenu :
 			- urlTitle: Vacancy Type
-				urlRules: {siteType: 0,1, userLevel: 1}
+				urlRules: {siteType: "0,1", userLevel: "1,2"}
 				urlPath: {url: o/type/manage, attr: -, icon: -}
 
 content_menu	:
-        
+		
 # controller o/type
 	- urlTitle: Add Type
-		urlRules: {vacancy, o/type, manage, siteType: 0,1, userLevel: 1,2}
+		urlRules: {vacancy, o/type, manage, siteType: "0,1", userLevel: "1,2"}
 		urlPath: {url: add, attr: -, icon: -}
