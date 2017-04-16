@@ -259,7 +259,7 @@ class VacancyApply extends CActiveRecord
 					'model'=>$this,
 					'attribute'=>'creation_date',
 					'language' => 'en',
-					'i18nScriptFile' => 'jquery-ui-i18n.min.js'
+					'i18nScriptFile' => 'jquery-ui-i18n.min.js',
 					//'mode'=>'datetime',
 					'htmlOptions' => array(
 						'id' => 'creation_date_filter',
@@ -286,7 +286,7 @@ class VacancyApply extends CActiveRecord
 					'model'=>$this,
 					'attribute'=>'modified_date',
 					'language' => 'en',
-					'i18nScriptFile' => 'jquery-ui-i18n.min.js'
+					'i18nScriptFile' => 'jquery-ui-i18n.min.js',
 					//'mode'=>'datetime',
 					'htmlOptions' => array(
 						'id' => 'modified_date_filter',
@@ -313,7 +313,7 @@ class VacancyApply extends CActiveRecord
 					'model'=>$this,
 					'attribute'=>'updated_date',
 					'language' => 'en',
-					'i18nScriptFile' => 'jquery-ui-i18n.min.js'
+					'i18nScriptFile' => 'jquery-ui-i18n.min.js',
 					//'mode'=>'datetime',
 					'htmlOptions' => array(
 						'id' => 'updated_date_filter',
