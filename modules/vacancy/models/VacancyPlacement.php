@@ -6,7 +6,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 1 March 2017, 16:54 WIB
- * @link https://github.com/ommu/Vacancy-Advanced
+ * @link https://github.com/ommu/mod-vacancy-advanced
  * @contact (+62)856-299-4114
  *
  * This is the template for generating the model class of a specified table.
@@ -98,15 +98,6 @@ class VacancyPlacement extends CActiveRecord
 			'creation_date' => Yii::t('attribute', 'Creation Date'),
 			'creation_id' => Yii::t('attribute', 'Creation'),
 		);
-		/*
-			'ID' => 'ID',
-			'Vacancy' => 'Vacancy',
-			'Province' => 'Province',
-			'City' => 'City',
-			'Creation Date' => 'Creation Date',
-			'Creation' => 'Creation',
-		
-		*/
 	}
 
 	/**

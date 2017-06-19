@@ -6,7 +6,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 1 March 2017, 16:57 WIB
- * @link https://github.com/ommu/Vacancy-Advanced
+ * @link https://github.com/ommu/mod-vacancy-advanced
  * @contact (+62)856-299-4114
  *
  * This is the template for generating the model class of a specified table.
@@ -88,12 +88,6 @@ class ViewVacancyGroups extends CActiveRecord
 			'vacancies' => Yii::t('attribute', 'Vacancies'),
 			'vacancy_all' => Yii::t('attribute', 'Vacancy All'),
 		);
-		/*
-			'Group' => 'Group',
-			'Vacancies' => 'Vacancies',
-			'Vacancy All' => 'Vacancy All',
-		
-		*/
 	}
 
 	/**

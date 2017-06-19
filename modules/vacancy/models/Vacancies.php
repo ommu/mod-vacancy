@@ -6,7 +6,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 1 March 2017, 16:51 WIB
- * @link https://github.com/ommu/Vacancy-Advanced
+ * @link https://github.com/ommu/mod-vacancy-advanced
  * @contact (+62)856-299-4114
  *
  * This is the template for generating the model class of a specified table.
@@ -168,39 +168,6 @@ class Vacancies extends CActiveRecord
 			'modified_date' => Yii::t('attribute', 'Modified Date'),
 			'modified_id' => Yii::t('attribute', 'Modified'),
 		);
-		/*
-			'Vacancy' => 'Vacancy',
-			'Publish' => 'Publish',
-			'Member' => 'Member',
-			'Position' => 'Position',
-			'Type' => 'Type',
-			'Vacancy Style' => 'Vacancy Style',
-			'Apply Online' => 'Apply Online',
-			'Vacancy Code' => 'Vacancy Code',
-			'Published Date' => 'Published Date',
-			'Started Date' => 'Started Date',
-			'Closed Date' => 'Closed Date',
-			'Intro Text' => 'Intro Text',
-			'General Notes' => 'General Notes',
-			'Requirements' => 'Requirements',
-			'Responsibilty' => 'Responsibilty',
-			'Additionals' => 'Additionals',
-			'Profile Applicants' => 'Profile Applicants',
-			'Vacancy Ipk' => 'Vacancy Ipk',
-			'Vacancy Age' => 'Vacancy Age',
-			'Vacancy Degree' => 'Vacancy Degree',
-			'Vacancy Experience' => 'Vacancy Experience',
-			'Vacancy Needed' => 'Vacancy Needed',
-			'Jobs Status' => 'Jobs Status',
-			'Jobs Level' => 'Jobs Level',
-			'Jobs Salary' => 'Jobs Salary',
-			'Enable Filter' => 'Enable Filter',
-			'Creation Date' => 'Creation Date',
-			'Creation' => 'Creation',
-			'Modified Date' => 'Modified Date',
-			'Modified' => 'Modified',
-		
-		*/
 	}
 
 	/**
