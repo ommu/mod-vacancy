@@ -30,7 +30,7 @@
  * @property string $updated_id
  *
  * The followings are the available model relations:
- * @property OmmuVacancyApply $apply
+ * @property VacancyApply $apply
  */
 class VacancyApplyHistory extends CActiveRecord
 {

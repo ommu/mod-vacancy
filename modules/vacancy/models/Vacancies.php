@@ -55,16 +55,16 @@
  * @property string $modified_id
  *
  * The followings are the available model relations:
- * @property OmmuMembers $member
- * @property OmmuIpediaPositions $position
- * @property OmmuVacancyType $type
- * @property OmmuVacancyApply[] $ommuVacancyApplies
- * @property OmmuVacancyGroupItem[] $ommuVacancyGroupItems
- * @property OmmuVacancyIndustry[] $ommuVacancyIndustries
- * @property OmmuVacancyMajor[] $ommuVacancyMajors
- * @property OmmuVacancyPlacement[] $ommuVacancyPlacements
- * @property OmmuVacancyTag[] $ommuVacancyTags
- * @property OmmuVacancyUniversity[] $ommuVacancyUniversities
+ * @property Members $member
+ * @property IpediaPositions $position
+ * @property VacancyType $type
+ * @property VacancyApply[] $VacancyApplies
+ * @property VacancyGroupItem[] $VacancyGroupItems
+ * @property VacancyIndustry[] $VacancyIndustries
+ * @property VacancyMajor[] $VacancyMajors
+ * @property VacancyPlacement[] $VacancyPlacements
+ * @property VacancyTag[] $VacancyTags
+ * @property VacancyUniversity[] $VacancyUniversities
  */
 class Vacancies extends CActiveRecord
 {

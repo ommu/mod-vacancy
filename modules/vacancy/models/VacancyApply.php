@@ -34,8 +34,8 @@
  * @property string $updated_date
  *
  * The followings are the available model relations:
- * @property OmmuVacancies $vacancy
- * @property OmmuVacancyApplyHistory[] $ommuVacancyApplyHistories
+ * @property Vacancies $vacancy
+ * @property VacancyApplyHistory[] $VacancyApplyHistories
  */
 class VacancyApply extends CActiveRecord
 {

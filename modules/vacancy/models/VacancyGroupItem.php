@@ -31,8 +31,8 @@
  * @property string $creation_id
  *
  * The followings are the available model relations:
- * @property OmmuVacancyGroups $group
- * @property OmmuVacancies $vacancy
+ * @property VacancyGroups $group
+ * @property Vacancies $vacancy
  */
 class VacancyGroupItem extends CActiveRecord
 {

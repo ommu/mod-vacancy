@@ -30,7 +30,7 @@
  * @property string $creation_id
  *
  * The followings are the available model relations:
- * @property OmmuVacancies $vacancy
+ * @property Vacancies $vacancy
  */
 class VacancyTag extends CActiveRecord
 {

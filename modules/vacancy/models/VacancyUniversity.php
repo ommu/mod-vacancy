@@ -30,8 +30,8 @@
  * @property string $creation_id
  *
  * The followings are the available model relations:
- * @property OmmuVacancies $vacancy
- * @property OmmuIpediaUniversities $university
+ * @property Vacancies $vacancy
+ * @property IpediaUniversities $university
  */
 class VacancyUniversity extends CActiveRecord
 {
