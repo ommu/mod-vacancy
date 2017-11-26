@@ -24,7 +24,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 2 March 2017, 07:23 WIB
- * @link http://opensource.ommu.co
+ * @link https://github.com/ommu/ommu-vacancy
  * @contact (+62)856-299-4114
  *
  *----------------------------------------------------------------------------------------------------------
