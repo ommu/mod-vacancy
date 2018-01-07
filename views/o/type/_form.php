@@ -14,7 +14,7 @@
  */
 ?>
 
-<?php $form=$this->beginWidget('application.libraries.core.components.system.OActiveFormtem.OActiveForm', array(
+<?php $form=$this->beginWidget('application.libraries.core.components.system.OActiveForm', array(
 	'id'=>'vacancy-type-form',
 	'enableAjaxValidation'=>true,
 	//'htmlOptions' => array('enctype' => 'multipart/form-data')
