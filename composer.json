@@ -1,0 +1,38 @@
+{
+	"name": "ommu/vacancy",
+	"description": "Vacancy Module for Ommu Platform",
+	"keywords": [
+		"ommu",
+		"platform",
+		"ommu platform",
+		"module",
+		"vacancy"
+	],
+	"homepage": "https://github.com/ommu/ommu-vacancy",
+	"type": "ommu-module",
+	"license": "Apache-2.0",
+	"support": {
+		"issues": "https://github.com/ommu/ommu-vacancy/issues",
+		"wiki": "https://github.com/ommu/ommu-vacancy/wiki",
+		"source": "https://github.com/ommu/ommu-vacancy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ommu/ommu-vacancy.git"
+	},
+	"authors": [
+		{
+			"name": "Putra Sudaryanto",
+			"email": "putra@sudaryanto.id",
+			"homepage": "https://putra.sudaryanto.id",
+			"role": "Creator"
+		}
+	],
+	"require": {
+		"php": ">=5.3.2",
+		"oomphinc/composer-installers-extender": "^1.0",
+		"yiisoft/yii": ">=1.1.14"
+	},
+	"require-dev": {
+	}
+}
