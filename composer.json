@@ -1,24 +1,25 @@
 {
 	"name": "ommu/vacancy",
-	"description": "Vacancy Module for Ommu Platform",
+	"description": "Vacancy Module from Ommu Platform",
 	"keywords": [
-		"ommu",
-		"platform",
-		"ommu platform",
 		"module",
-		"vacancy"
+		"vacancy",
+		"jobs",
+		"career",
+		"ommu",
+		"ommu platform"
 	],
-	"homepage": "https://github.com/ommu/ommu-vacancy",
+	"homepage": "https://github.com/ommu/mod-vacancy",
 	"type": "ommu-module",
 	"license": "Apache-2.0",
 	"support": {
-		"issues": "https://github.com/ommu/ommu-vacancy/issues",
-		"wiki": "https://github.com/ommu/ommu-vacancy/wiki",
-		"source": "https://github.com/ommu/ommu-vacancy"
+		"issues": "https://github.com/ommu/mod-vacancy/issues",
+		"wiki": "https://github.com/ommu/mod-vacancy/wiki",
+		"source": "https://github.com/ommu/mod-vacancy"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ommu/ommu-vacancy.git"
+		"url": "https://github.com/ommu/mod-vacancy.git"
 	},
 	"authors": [
 		{
