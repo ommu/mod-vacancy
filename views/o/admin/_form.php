@@ -97,7 +97,7 @@
 		<?php echo $form->labelEx($model,'published_date'); ?>
 		<div class="desc">
 			<?php
-			$model->published_date = !$model->isNewRecord ? (!in_array($model->published_date, array('0000-00-00','1970-01-01')) ? date('d-m-Y', strtotime($model->published_date)) : '') : '';
+			$model->published_date = !$model->isNewRecord ? (!in_array($model->published_date, array('0000-00-00','1970-01-01','0002-12-02','-0001-11-30')) ? date('d-m-Y', strtotime($model->published_date)) : '') : '';
 			//echo $form->textField($model,'published_date');
 			$this->widget('application.libraries.core.components.system.CJuiDatePicker',array(
 				'model'=>$model,
@@ -119,7 +119,7 @@
 		<?php echo $form->labelEx($model,'started_date'); ?>
 		<div class="desc">
 			<?php
-			$model->started_date = !$model->isNewRecord ? (!in_array($model->started_date, array('0000-00-00','1970-01-01')) ? date('d-m-Y', strtotime($model->started_date)) : '') : '';
+			$model->started_date = !$model->isNewRecord ? (!in_array($model->started_date, array('0000-00-00','1970-01-01','0002-12-02','-0001-11-30')) ? date('d-m-Y', strtotime($model->started_date)) : '') : '';
 			//echo $form->textField($model,'started_date');
 			$this->widget('application.libraries.core.components.system.CJuiDatePicker',array(
 				'model'=>$model,
@@ -141,7 +141,7 @@
 		<?php echo $form->labelEx($model,'closed_date'); ?>
 		<div class="desc">
 			<?php
-			$model->closed_date = !$model->isNewRecord ? (!in_array($model->closed_date, array('0000-00-00','1970-01-01')) ? date('d-m-Y', strtotime($model->closed_date)) : '') : '';
+			$model->closed_date = !$model->isNewRecord ? (!in_array($model->closed_date, array('0000-00-00','1970-01-01','0002-12-02','-0001-11-30')) ? date('d-m-Y', strtotime($model->closed_date)) : '') : '';
 			//echo $form->textField($model,'closed_date');
 			$this->widget('application.libraries.core.components.system.CJuiDatePicker',array(
 				'model'=>$model,
