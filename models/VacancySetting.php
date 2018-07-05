@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 1 March 2017, 16:55 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
@@ -119,20 +119,20 @@ class VacancySetting extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.id',$this->id);
-		$criteria->compare('t.license',strtolower($this->license),true);
-		$criteria->compare('t.permission',$this->permission);
-		$criteria->compare('t.meta_keyword',strtolower($this->meta_keyword),true);
-		$criteria->compare('t.meta_description',strtolower($this->meta_description),true);
-		$criteria->compare('t.profile_applicants',strtolower($this->profile_applicants),true);
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified']))
-			$criteria->compare('t.modified_id',$_GET['modified']);
+		$criteria->compare('t.id', $this->id);
+		$criteria->compare('t.license', strtolower($this->license), true);
+		$criteria->compare('t.permission', $this->permission);
+		$criteria->compare('t.meta_keyword', strtolower($this->meta_keyword), true);
+		$criteria->compare('t.meta_description', strtolower($this->meta_description), true);
+		$criteria->compare('t.profile_applicants', strtolower($this->profile_applicants), true);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified'))
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		else
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 
-		if(!isset($_GET['VacancySetting_sort']))
+		if(!Yii::app()->getRequest()->getParam('VacancySetting_sort'))
 			$criteria->order = 't.id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -192,10 +192,10 @@ class VacancySetting extends CActiveRecord
 				'value' => '$this->grid->dataProvider->pagination->currentPage*$this->grid->dataProvider->pagination->pageSize + $row+1'
 			);
 			$this->defaultColumns[] = 'license';
-			if(!isset($_GET['type'])) {
+			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'permission',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("permission",array("id"=>$data->id)), $data->permission, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("permission", array("id"=>$data->id)), $data->permission, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
@@ -226,7 +226,7 @@ class VacancySetting extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -246,7 +246,7 @@ class VacancySetting extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)

@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 1 March 2017, 16:54 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
@@ -117,21 +117,21 @@ class VacancyPlacement extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.id',strtolower($this->id),true);
-		if(isset($_GET['vacancy']))
-			$criteria->compare('t.vacancy_id',$_GET['vacancy']);
+		$criteria->compare('t.id', strtolower($this->id), true);
+		if(Yii::app()->getRequest()->getParam('vacancy'))
+			$criteria->compare('t.vacancy_id', Yii::app()->getRequest()->getParam('vacancy'));
 		else
-			$criteria->compare('t.vacancy_id',$this->vacancy_id);
-		$criteria->compare('t.province_id',$this->province_id);
-		$criteria->compare('t.city_id',strtolower($this->city_id),true);
-		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.creation_date)',date('Y-m-d', strtotime($this->creation_date)));
-		if(isset($_GET['creation']))
-			$criteria->compare('t.creation_id',$_GET['creation']);
+			$criteria->compare('t.vacancy_id', $this->vacancy_id);
+		$criteria->compare('t.province_id', $this->province_id);
+		$criteria->compare('t.city_id', strtolower($this->city_id), true);
+		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.creation_date)', date('Y-m-d', strtotime($this->creation_date)));
+		if(Yii::app()->getRequest()->getParam('creation'))
+			$criteria->compare('t.creation_id', Yii::app()->getRequest()->getParam('creation'));
 		else
-			$criteria->compare('t.creation_id',$this->creation_id);
+			$criteria->compare('t.creation_id', $this->creation_id);
 
-		if(!isset($_GET['VacancyPlacement_sort']))
+		if(!Yii::app()->getRequest()->getParam('VacancyPlacement_sort'))
 			$criteria->order = 't.id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -208,7 +208,7 @@ class VacancyPlacement extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -228,7 +228,7 @@ class VacancyPlacement extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)

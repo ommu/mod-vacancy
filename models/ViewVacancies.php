@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 1 March 2017, 16:58 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
@@ -126,20 +126,20 @@ class ViewVacancies extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.vacancy_id',strtolower($this->vacancy_id),true);
-		$criteria->compare('t.group_id',strtolower($this->group_id),true);
-		$criteria->compare('t.position_name',strtolower($this->position_name),true);
-		$criteria->compare('t.applys',strtolower($this->applys),true);
-		$criteria->compare('t.apply_all',strtolower($this->apply_all),true);
-		$criteria->compare('t.universities',strtolower($this->universities),true);
-		$criteria->compare('t.majors',strtolower($this->majors),true);
-		$criteria->compare('t.placements',strtolower($this->placements),true);
-		$criteria->compare('t.tags',strtolower($this->tags),true);
-		$criteria->compare('t.industries',strtolower($this->industries),true);
-		$criteria->compare('t.vacancies',strtolower($this->vacancies),true);
-		$criteria->compare('t.vacancy_all',strtolower($this->vacancy_all),true);
+		$criteria->compare('t.vacancy_id', strtolower($this->vacancy_id), true);
+		$criteria->compare('t.group_id', strtolower($this->group_id), true);
+		$criteria->compare('t.position_name', strtolower($this->position_name), true);
+		$criteria->compare('t.applys', strtolower($this->applys), true);
+		$criteria->compare('t.apply_all', strtolower($this->apply_all), true);
+		$criteria->compare('t.universities', strtolower($this->universities), true);
+		$criteria->compare('t.majors', strtolower($this->majors), true);
+		$criteria->compare('t.placements', strtolower($this->placements), true);
+		$criteria->compare('t.tags', strtolower($this->tags), true);
+		$criteria->compare('t.industries', strtolower($this->industries), true);
+		$criteria->compare('t.vacancies', strtolower($this->vacancies), true);
+		$criteria->compare('t.vacancy_all', strtolower($this->vacancy_all), true);
 
-		if(!isset($_GET['ViewVacancies_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewVacancies_sort'))
 			$criteria->order = 't. DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -224,7 +224,7 @@ class ViewVacancies extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 1 March 2017, 16:57 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
@@ -107,11 +107,11 @@ class ViewVacancyGroups extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.group_id',strtolower($this->group_id),true);
-		$criteria->compare('t.vacancies',strtolower($this->vacancies),true);
-		$criteria->compare('t.vacancy_all',strtolower($this->vacancy_all),true);
+		$criteria->compare('t.group_id', strtolower($this->group_id), true);
+		$criteria->compare('t.vacancies', strtolower($this->vacancies), true);
+		$criteria->compare('t.vacancy_all', strtolower($this->vacancy_all), true);
 
-		if(!isset($_GET['ViewVacancyGroups_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewVacancyGroups_sort'))
 			$criteria->order = 't. DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -178,7 +178,7 @@ class ViewVacancyGroups extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

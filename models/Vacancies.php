@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 1 March 2017, 16:51 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
@@ -187,67 +187,67 @@ class Vacancies extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.vacancy_id',strtolower($this->vacancy_id),true);
-		if(isset($_GET['type']) && $_GET['type'] == 'publish')
-			$criteria->compare('t.publish',1);
-		elseif(isset($_GET['type']) && $_GET['type'] == 'unpublish')
-			$criteria->compare('t.publish',0);
-		elseif(isset($_GET['type']) && $_GET['type'] == 'trash')
-			$criteria->compare('t.publish',2);
+		$criteria->compare('t.vacancy_id', strtolower($this->vacancy_id), true);
+		if(Yii::app()->getRequest()->getParam('type') == 'publish')
+			$criteria->compare('t.publish', 1);
+		elseif(Yii::app()->getRequest()->getParam('type') == 'unpublish')
+			$criteria->compare('t.publish', 0);
+		elseif(Yii::app()->getRequest()->getParam('type') == 'trash')
+			$criteria->compare('t.publish', 2);
 		else {
-			$criteria->addInCondition('t.publish',array(0,1));
-			$criteria->compare('t.publish',$this->publish);
+			$criteria->addInCondition('t.publish', array(0,1));
+			$criteria->compare('t.publish', $this->publish);
 		}
-		if(isset($_GET['member']))
-			$criteria->compare('t.member_id',$_GET['member']);
+		if(Yii::app()->getRequest()->getParam('member'))
+			$criteria->compare('t.member_id', Yii::app()->getRequest()->getParam('member'));
 		else
-			$criteria->compare('t.member_id',$this->member_id);
-		if(isset($_GET['position']))
-			$criteria->compare('t.position_id',$_GET['position']);
+			$criteria->compare('t.member_id', $this->member_id);
+		if(Yii::app()->getRequest()->getParam('position'))
+			$criteria->compare('t.position_id', Yii::app()->getRequest()->getParam('position'));
 		else
-			$criteria->compare('t.position_id',$this->position_id);
-		if(isset($_GET['type']))
-			$criteria->compare('t.type_id',$_GET['type']);
+			$criteria->compare('t.position_id', $this->position_id);
+		if(Yii::app()->getRequest()->getParam('type'))
+			$criteria->compare('t.type_id', Yii::app()->getRequest()->getParam('type'));
 		else
-			$criteria->compare('t.type_id',$this->type_id);
-		$criteria->compare('t.vacancy_style',strtolower($this->vacancy_style),true);
-		$criteria->compare('t.apply_online',$this->apply_online);
-		$criteria->compare('t.vacancy_code',strtolower($this->vacancy_code),true);
-		if($this->published_date != null && !in_array($this->published_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.published_date)',date('Y-m-d', strtotime($this->published_date)));
-		if($this->started_date != null && !in_array($this->started_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.started_date)',date('Y-m-d', strtotime($this->started_date)));
-		if($this->closed_date != null && !in_array($this->closed_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.closed_date)',date('Y-m-d', strtotime($this->closed_date)));
-		$criteria->compare('t.intro_text',strtolower($this->intro_text),true);
-		$criteria->compare('t.general_notes',strtolower($this->general_notes),true);
-		$criteria->compare('t.requirements',strtolower($this->requirements),true);
-		$criteria->compare('t.responsibilty',strtolower($this->responsibilty),true);
-		$criteria->compare('t.additionals',strtolower($this->additionals),true);
-		$criteria->compare('t.profile_applicants',strtolower($this->profile_applicants),true);
-		$criteria->compare('t.vacancy_ipk',strtolower($this->vacancy_ipk),true);
-		$criteria->compare('t.vacancy_age',strtolower($this->vacancy_age),true);
-		$criteria->compare('t.vacancy_degree',strtolower($this->vacancy_degree),true);
-		$criteria->compare('t.vacancy_experience',strtolower($this->vacancy_experience),true);
-		$criteria->compare('t.vacancy_needed',strtolower($this->vacancy_needed),true);
-		$criteria->compare('t.jobs_status',strtolower($this->jobs_status),true);
-		$criteria->compare('t.jobs_level',strtolower($this->jobs_level),true);
-		$criteria->compare('t.jobs_salary',strtolower($this->jobs_salary),true);
-		$criteria->compare('t.enable_filter',strtolower($this->enable_filter),true);
-		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.creation_date)',date('Y-m-d', strtotime($this->creation_date)));
-		if(isset($_GET['creation']))
-			$criteria->compare('t.creation_id',$_GET['creation']);
+			$criteria->compare('t.type_id', $this->type_id);
+		$criteria->compare('t.vacancy_style', strtolower($this->vacancy_style), true);
+		$criteria->compare('t.apply_online', $this->apply_online);
+		$criteria->compare('t.vacancy_code', strtolower($this->vacancy_code), true);
+		if($this->published_date != null && !in_array($this->published_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.published_date)', date('Y-m-d', strtotime($this->published_date)));
+		if($this->started_date != null && !in_array($this->started_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.started_date)', date('Y-m-d', strtotime($this->started_date)));
+		if($this->closed_date != null && !in_array($this->closed_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.closed_date)', date('Y-m-d', strtotime($this->closed_date)));
+		$criteria->compare('t.intro_text', strtolower($this->intro_text), true);
+		$criteria->compare('t.general_notes', strtolower($this->general_notes), true);
+		$criteria->compare('t.requirements', strtolower($this->requirements), true);
+		$criteria->compare('t.responsibilty', strtolower($this->responsibilty), true);
+		$criteria->compare('t.additionals', strtolower($this->additionals), true);
+		$criteria->compare('t.profile_applicants', strtolower($this->profile_applicants), true);
+		$criteria->compare('t.vacancy_ipk', strtolower($this->vacancy_ipk), true);
+		$criteria->compare('t.vacancy_age', strtolower($this->vacancy_age), true);
+		$criteria->compare('t.vacancy_degree', strtolower($this->vacancy_degree), true);
+		$criteria->compare('t.vacancy_experience', strtolower($this->vacancy_experience), true);
+		$criteria->compare('t.vacancy_needed', strtolower($this->vacancy_needed), true);
+		$criteria->compare('t.jobs_status', strtolower($this->jobs_status), true);
+		$criteria->compare('t.jobs_level', strtolower($this->jobs_level), true);
+		$criteria->compare('t.jobs_salary', strtolower($this->jobs_salary), true);
+		$criteria->compare('t.enable_filter', strtolower($this->enable_filter), true);
+		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.creation_date)', date('Y-m-d', strtotime($this->creation_date)));
+		if(Yii::app()->getRequest()->getParam('creation'))
+			$criteria->compare('t.creation_id', Yii::app()->getRequest()->getParam('creation'));
 		else
-			$criteria->compare('t.creation_id',$this->creation_id);
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified']))
-			$criteria->compare('t.modified_id',$_GET['modified']);
+			$criteria->compare('t.creation_id', $this->creation_id);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified'))
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		else
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 
-		if(!isset($_GET['Vacancies_sort']))
+		if(!Yii::app()->getRequest()->getParam('Vacancies_sort'))
 			$criteria->order = 't.vacancy_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -328,10 +328,10 @@ class Vacancies extends CActiveRecord
 				'header' => 'No',
 				'value' => '$this->grid->dataProvider->pagination->currentPage*$this->grid->dataProvider->pagination->pageSize + $row+1'
 			);
-			if(!isset($_GET['type'])) {
+			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'publish',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("publish",array("id"=>$data->vacancy_id)), $data->publish, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("publish", array("id"=>$data->vacancy_id)), $data->publish, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
@@ -346,10 +346,10 @@ class Vacancies extends CActiveRecord
 			$this->defaultColumns[] = 'position_id';
 			$this->defaultColumns[] = 'type_id';
 			$this->defaultColumns[] = 'vacancy_style';
-			if(!isset($_GET['type'])) {
+			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'apply_online',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("apply_online",array("id"=>$data->vacancy_id)), $data->apply_online, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("apply_online", array("id"=>$data->vacancy_id)), $data->apply_online, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
@@ -378,7 +378,7 @@ class Vacancies extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -404,7 +404,7 @@ class Vacancies extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -430,7 +430,7 @@ class Vacancies extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -471,7 +471,7 @@ class Vacancies extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -498,7 +498,7 @@ class Vacancies extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -518,7 +518,7 @@ class Vacancies extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)
