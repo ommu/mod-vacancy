@@ -45,14 +45,14 @@ class AdminController extends Controller
 	{
 		if(!Yii::app()->user->isGuest) {
 			if(Yii::app()->user->level == 1) {
-				$arrThemes = Utility::getCurrentTemplate('admin');
+				$arrThemes = $this->currentTemplate('admin');
 				Yii::app()->theme = $arrThemes['folder'];
 				$this->layout = $arrThemes['layout'];
 			}
 		} else
 			$this->redirect(Yii::app()->createUrl('site/login'));
 		/*
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
 		*/
@@ -107,10 +107,10 @@ class AdminController extends Controller
 	 */
 	public function actionIndex() 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$setting = Vacancies::model()->findByPk(1, array(
 			'select' => 'meta_description, meta_keyword',
@@ -143,10 +143,10 @@ class AdminController extends Controller
 	 */
 	public function actionView($id) 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$setting = VideoSetting::model()->findByPk(1, array(
 			'select' => 'meta_keyword',
