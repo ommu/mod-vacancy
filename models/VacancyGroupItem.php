@@ -35,6 +35,8 @@
  */
 class VacancyGroupItem extends CActiveRecord
 {
+	use GridViewTrait;
+
 	public $defaultColumns = array();
 
 	/**
@@ -209,10 +211,7 @@ class VacancyGroupItem extends CActiveRecord
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
-					'filter'=>array(
-						1=>Yii::t('phrase', 'Yes'),
-						0=>Yii::t('phrase', 'No'),
-					),
+					'filter' => $this->filterYesNo(),
 					'type' => 'raw',
 				);
 			}
