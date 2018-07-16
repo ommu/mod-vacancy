@@ -359,7 +359,7 @@ class Vacancies extends CActiveRecord
 			$this->defaultColumns[] = 'vacancy_code';
 			$this->defaultColumns[] = array(
 				'name' => 'published_date',
-				'value' => 'Utility::dateFormat($data->published_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->published_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
@@ -367,7 +367,7 @@ class Vacancies extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'started_date',
-				'value' => 'Utility::dateFormat($data->started_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->started_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
@@ -375,7 +375,7 @@ class Vacancies extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'closed_date',
-				'value' => 'Utility::dateFormat($data->closed_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->closed_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
@@ -398,7 +398,7 @@ class Vacancies extends CActiveRecord
 			$this->defaultColumns[] = 'enable_filter';
 			$this->defaultColumns[] = array(
 				'name' => 'creation_date',
-				'value' => 'Utility::dateFormat($data->creation_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->creation_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
@@ -407,7 +407,7 @@ class Vacancies extends CActiveRecord
 			$this->defaultColumns[] = 'creation_id';
 			$this->defaultColumns[] = array(
 				'name' => 'modified_date',
-				'value' => 'Utility::dateFormat($data->modified_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->modified_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),

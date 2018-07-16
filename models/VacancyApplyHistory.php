@@ -207,7 +207,7 @@ class VacancyApplyHistory extends CActiveRecord
 			$this->defaultColumns[] = 'apply_id';
 			$this->defaultColumns[] = array(
 				'name' => 'updated_date',
-				'value' => 'Utility::dateFormat($data->updated_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->updated_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
