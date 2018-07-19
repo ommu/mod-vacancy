@@ -110,7 +110,7 @@ class TypeController extends Controller
 	public function actionManage() 
 	{
 		$model=new VacancyType('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['VacancyType'])) {
 			$model->attributes=$_GET['VacancyType'];
 		}

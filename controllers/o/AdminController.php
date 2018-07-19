@@ -173,7 +173,7 @@ class AdminController extends Controller
 	public function actionManage() 
 	{
 		$model=new Vacancies('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['Vacancies'])) {
 			$model->attributes=$_GET['Vacancies'];
 		}
