@@ -15,14 +15,13 @@
 
 	$this->breadcrumbs=array(
 		'Vacancies'=>array('manage'),
-		'Headline',
+		Yii::t('phrase', 'Headline'),
 	);
 ?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'vacancies-form',
 	'enableAjaxValidation'=>true,
-	//'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
 
 	<div class="dialog-content">

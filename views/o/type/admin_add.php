@@ -15,7 +15,7 @@
 
 	$this->breadcrumbs=array(
 		'Vacancy Types'=>array('manage'),
-		'Create',
+		Yii::t('phrase', 'Create'),
 	);
 ?>
 

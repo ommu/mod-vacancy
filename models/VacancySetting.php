@@ -197,7 +197,7 @@ class VacancySetting extends CActiveRecord
 			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'permission',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("permission", array("id"=>$data->id)), $data->permission, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl(\'permission\', array(\'id\'=>$data->id)), $data->permission, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
