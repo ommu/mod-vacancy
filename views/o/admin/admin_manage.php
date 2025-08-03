@@ -4,9 +4,9 @@
  * @var $this AdminController
  * @var $model Vacancies
  *
- * @author Putra Sudaryanto <putra@ommu.id>
- * @contact (+62)811-2540-432
- * @copyright Copyright (c) 2017 OMMU (www.ommu.id)
+ * @author Putra Sudaryanto <putra@ommu.co>
+ * @contact (+62)856-299-4114
+ * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
  * @created date 2 March 2017, 07:23 WIB
  * @link https://github.com/ommu/mod-vacancy
  *
