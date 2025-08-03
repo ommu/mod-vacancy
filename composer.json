@@ -1,13 +1,13 @@
 {
 	"name": "ommu/vacancy",
-	"description": "Vacancy Module from Ommu Platform",
+	"description": "Vacancy Module from OMMU",
 	"keywords": [
 		"module",
 		"vacancy",
 		"jobs",
 		"career",
 		"ommu",
-		"ommu-platform"
+		"yii2"
 	],
 	"homepage": "https://github.com/ommu/mod-vacancy",
 	"type": "ommu-module",
@@ -24,8 +24,8 @@
 	"authors": [
 		{
 			"name": "Putra Sudaryanto",
-			"email": "putra@ommu.co",
-			"homepage": "https://ommu.co",
+			"email": "putra@ommu.id",
+			"homepage": "https://ommu.id",
 			"role": "Creator"
 		}
 	],
@@ -33,7 +33,5 @@
 		"php": ">=5.3.2",
 		"oomphinc/composer-installers-extender": "^1.0",
 		"yiisoft/yii": ">=1.1.14"
-	},
-	"require-dev": {
 	}
 }
