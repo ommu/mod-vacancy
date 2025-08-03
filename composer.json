@@ -7,7 +7,7 @@
 		"jobs",
 		"career",
 		"ommu",
-		"yii2"
+		"yii"
 	],
 	"homepage": "https://github.com/ommu/mod-vacancy",
 	"type": "ommu-module",
